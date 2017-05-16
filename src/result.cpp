@@ -23,11 +23,8 @@ result::result
 int result::initializeCleanFolder()
 {
     // creates output folders if they don't exist
-    //auto cmgui_folder = system("mkdir -p cmgui_output");
     auto vtk_folder = system("mkdir -p vtk_fluid");
-    //auto old_cmgui_files = system("rm -f cmgui_output/*");
     auto old_vtk_fluid_files = system("rm -f vtk_fluid/*");
-    //return cmgui_folder + vtk_folder + old_cmgui_files + old_vtk_fluid_files;
 }
 
 void result::writeResultVTK(int time)
