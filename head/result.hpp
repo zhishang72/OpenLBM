@@ -20,9 +20,7 @@ class result
             fluidField &field
 
         );
-        // Override copy constructor due to -Weffc++ warnings
         result(const result&) = default;
-        // Override copy assignment due to -Weffc++ warnings
         result& operator= (const result&) = default;
         // Destructor
         ~result() = default;
