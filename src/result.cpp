@@ -50,10 +50,10 @@ void result::writeResultVTK(int time)
     vtk_file << 0 << std::endl;
     vtk_file << "POINT_DATA " << nx * ny << std::endl;
 
-    // Write density difference
-    vtk_file << "SCALARS density_difference float 1" << std::endl;
+    // Write relative pressure
+    vtk_file << "SCALARS relative_pressure float" << std::endl;
     vtk_file << "LOOKUP_TABLE default" << std::endl;
-    for (auto density : field_.p) vtk_file << density - 1.0 << std::endl;
+    for (auto pressure : field_.p) vtk_file << pressure << std::endl;
 
     // Write velocity as vectors
     vtk_file << "VECTORS velocity_vector float" << std::endl;
