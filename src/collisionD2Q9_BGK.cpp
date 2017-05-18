@@ -108,7 +108,7 @@ void collisionD2Q9_BGK::computeMacroscopicProperties
 {
     rho_ = computeRho(df);
     auto rho = rho_;
-    for (auto &it_rho : rho) it_rho *= cs_sqr_;  //now rho is pressure
+    for (auto &it_rho : rho) it_rho = cs_sqr_ * (it_rho - 1.0);  //now rho is pressure
     field_.p = rho;
     field_.u = computeU(df);
 }
