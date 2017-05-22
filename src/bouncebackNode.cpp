@@ -112,6 +112,7 @@ void bouncebackNode::updateNode
                 df[n][D2Q9_.NW] = temp_node[D2Q9_.SE];
                 df[n][D2Q9_.SW] = temp_node[D2Q9_.NE];
                 df[n][D2Q9_.SE] = temp_node[D2Q9_.NW];
+                node.df_node = df[n];
             }  // node
         }
         if (sb_)
