@@ -19,7 +19,7 @@ bouncebackNode::bouncebackNode
     latticeModelD2Q9 &D2Q9,
     fluidField &field
 )
-: boundaryNode(true, false, lb),
+: boundaryNode(true, true, lb),
   nodes {},
   cb_ {cb},
   D2Q9_ (D2Q9),
