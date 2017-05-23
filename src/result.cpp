@@ -25,6 +25,7 @@ int result::initializeCleanFolder()
     // creates output folders if they don't exist
     auto vtk_folder = system("mkdir -p vtk_fluid");
     auto old_vtk_fluid_files = system("rm -f vtk_fluid/*");
+    return vtk_folder + old_vtk_fluid_files;
 }
 
 void result::writeResultVTK(int time)
