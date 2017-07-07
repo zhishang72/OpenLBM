@@ -64,6 +64,7 @@
 		<Unit filename="head/boundaryNode.hxx" />
 		<Unit filename="head/collisionBase.hxx" />
 		<Unit filename="head/collisionD2Q9_BGK.hpp" />
+		<Unit filename="head/collisionD2Q9_MRT.hpp" />
 		<Unit filename="head/latticeBase.hpp" />
 		<Unit filename="head/latticeBoltzmann.hpp" />
 		<Unit filename="head/latticeD2Q9.hpp" />
@@ -76,6 +77,7 @@
 		<Unit filename="src/ZouHeNode.cpp" />
 		<Unit filename="src/bouncebackNode.cpp" />
 		<Unit filename="src/collisionD2Q9_BGK.cpp" />
+		<Unit filename="src/collisionD2Q9_MRT.cpp" />
 		<Unit filename="src/latticeBase.cpp" />
 		<Unit filename="src/latticeBoltzmann.cpp" />
 		<Unit filename="src/latticeD2Q9.cpp" />
