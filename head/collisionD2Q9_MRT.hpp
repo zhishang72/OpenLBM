@@ -1,12 +1,12 @@
-#ifndef COLLISIOND2Q9_BGK_HPP_INCLUDED
-#define COLLISIOND2Q9_BGK_HPP_INCLUDED
+#ifndef COLLISIOND2Q9_MRT_HPP_INCLUDED
+#define COLLISIOND2Q9_MRT_HPP_INCLUDED
 
 #include "latticeModel.hxx"
 #include "collisionBase.hxx"
 
 #include "latticeBase.hpp"
 
-class collisionD2Q9_BGK: public collisionBase
+class collisionD2Q9_MRT: public collisionBase
 {
     public:
         // Constructor: Creates collision model for NS equation with the same density
@@ -14,7 +14,7 @@ class collisionD2Q9_BGK: public collisionBase
         // param lm lattice model used for simulation
         // param kinematic viscosity
         // param initial_density_f initial density of NS lattice
-        collisionD2Q9_BGK
+        collisionD2Q9_MRT
         (
             latticeBase &lb,
             double kinematic_viscosity,
@@ -27,7 +27,7 @@ class collisionD2Q9_BGK: public collisionBase
         // param lm lattice model used for simulation
         // param kinematic viscosity
         // param initial_density_f initial density of NS lattice
-        collisionD2Q9_BGK
+        collisionD2Q9_MRT
         (
             latticeBase &lb,
             double kinematic_viscosity,
@@ -36,9 +36,16 @@ class collisionD2Q9_BGK: public collisionBase
             fluidField &field
         );
         // Virtual destructor since we may be deriving from this class
-        virtual ~collisionD2Q9_BGK() = default;
+        virtual ~collisionD2Q9_MRT() = default;
         // Calculates equilibrium distribution function according to LBIntro
         void computefEq();
+        // Calculates momentem equilibrium distribution function according to LBIntro
+        void computemEq();
+        // Calculates momentem equilibrium distribution function according to LBIntro
+        void computeM
+        (
+            const std::vector<std::vector<double>> &df
+        );
         // Compute density at each node by summing up its distribution functions
         // param lattice 2D vector containing distribution functions
         // return density of lattice stored row-wise in a 1D vector
@@ -80,8 +87,14 @@ class collisionD2Q9_BGK: public collisionBase
         latticeModelD2Q9 &D2Q9_;
         // Relaxation time for BGK/
         double tau_;
+        // Relaxation rate for MRT/
+        std::vector<double> s_;
+        // Relaxation rate for MRT/
+        std::vector<std::vector<double>> m_;
+        // Relaxation rate for MRT/
+        std::vector<std::vector<double>> mEq_;
         // Skips the collision step for the node if it is a full-way bounceback node
         std::vector<bool> skip;
 };
 
-#endif // COLLISIOND2Q9_BGK_HPP_INCLUDED
+#endif // COLLISIOND2Q9_MRT_HPP_INCLUDED

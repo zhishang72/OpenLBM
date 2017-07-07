@@ -52,7 +52,7 @@ class collisionBase
         // Virtual destructor since we are deriving from this class
         virtual ~collisionBase()= default;
         // Calculates equilibrium distribution function according to LBIntro
-        virtual void computeEq() = 0;
+        virtual void computefEq() = 0;
         // Compute density at each node by summing up its distribution functions
         // param lattice 2D vector containing distribution functions
         // return density of lattice stored row-wise in a 1D vector
