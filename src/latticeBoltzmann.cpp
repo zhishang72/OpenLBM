@@ -20,7 +20,7 @@ latticeBoltzmann::latticeBoltzmann
   df {},
   bn_ {}
 {
-    cb_.computeEq();
+    cb_.computefEq();
     df = cb_.eqdf;
 }
 
@@ -34,7 +34,7 @@ void latticeBoltzmann::addBoundaryNode
 
 void latticeBoltzmann::takeStep()
 {
-    cb_.computeEq();
+    cb_.computefEq();
     cb_.collide(df);
     for(auto bdr : bn_)
     {
