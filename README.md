@@ -1,3 +1,8 @@
 # OpenLBM
-C++ LBM
-BGK and MRT
+cmake .
+
+make
+
+cd bin
+
+./lbm
